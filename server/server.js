@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 
 // import the router from your routes file
 
+import carsRouter from './routes/cars.js'
 
 dotenv.config()
 
@@ -23,6 +24,8 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
+
+app.use('/api/cars', carsRouter)
 
 
 if (process.env.NODE_ENV === 'production') {
